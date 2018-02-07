@@ -31,35 +31,14 @@ public class ThreadNetworking2 extends Thread
         
         if(isGetRequest)
         {
-            if(esperoArray)
-            {
-                resultado = JSONWS.sendPorGet(url, listadoParametros, true);
-            }
-            else
-            {
-                resultado = JSONWS.sendPorGet(url, listadoParametros, false);
-            }
+            System.out.println("SOY GET");
+            resultado = JSONWS.sendPorGet(url, listadoParametros, esperoArray);
         }
         else
         {
-            if(esperoArray)
-            {
-                resultado = JSONWS.sendPorPost(url, listadoParametros, true);
-            }
-            else
-            {
-                resultado = JSONWS.sendPorPost(url, listadoParametros, false);
-            }
+            System.out.println("SOY POST");
+            resultado = JSONWS.sendPorPost(url, listadoParametros, esperoArray);
         }
-
-       /* if(resultado.getReturnCode()==401)
-        {
-            //MasterController.logout();
-            //MasterController.tokenDeSesion=null;
-        }*/
-
-        //return null;
-        
     }
 
     /*

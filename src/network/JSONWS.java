@@ -285,7 +285,7 @@ public class JSONWS
     {
         ResultadoRest resultado = null;
 
-        ResultadoRest resultadoRest = sendData2(url,listadoParametros,true,esArray);
+        ResultadoRest resultadoRest = sendData2(url,listadoParametros,false,esArray);
 
         if(resultadoRest != null )
         {

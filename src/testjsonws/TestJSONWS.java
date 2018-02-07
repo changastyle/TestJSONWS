@@ -15,11 +15,11 @@ public class TestJSONWS
     {
         try
         {
-            String url = "http://localhost:8080/ControlGastosWS/findEntradas";
+            String url = "http://192.168.5.131:8080/controlgastosws/findEntradas";
             List<ParametroJSON> parametrosList = new ArrayList<ParametroJSON>();
-            //parametrosList.add(new ParametroJSON("mesYAnio", new Gson().toJson(new MesYAnio(2, (2018 - 1900 )) )));
+            parametrosList.add(new ParametroJSON("mesYAnio", new Gson().toJson(new MesYAnio(2, (2018 - 1900 )) )));
             
-            ThreadNetworking2 thread = new ThreadNetworking2(url,null,true,true,parametrosList);
+            ThreadNetworking2 thread = new ThreadNetworking2(url,null,false,true,parametrosList);
             thread.start();
             thread.join();
             System.out.println("res: " + thread.dameResultado());
